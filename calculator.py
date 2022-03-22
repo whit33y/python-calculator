@@ -1,23 +1,35 @@
-def addition(list):
-    result = 0
-    for a in list:
-        result+=a
-    return result
-def subtraction(list):
-    result = list[0]
-    for a in range (1,len(list)):
-        result-=list[a]
-    return result
-while True:
-    try:
-        how_much_numbers = int(input("How much numbers: "))
-        what_operation = int(input("Type 1 to add numbers, type 2 to subtract: "))
-        break
-    except ValueError:
-        print("Int, please.")
-if(what_operation==1):
-    for a in range(how_much_numbers):
-        print('Addition')
-if(what_operation==2):
-    for a in range(how_much_numbers):
-        print('Subtraction')
+def operation(operation,user_number,result):
+    if operation == 'a':
+        result+=user_number
+        return result
+    elif operation == 's':
+        result-=user_number
+        return result  
+    elif operation == 'm':
+        result = result * user_number
+        return result
+    else:
+        return('Wrong') 
+result = 0
+chosen_operation_check = False
+while chosen_operation_check == False:
+    chosen_operation = input('a=add, s=subtract, m=multiply, e=exit: ')
+    if chosen_operation == 'e':
+        chosen_operation_check = True
+    else:
+        if result == 0:
+            result = int(input('Give number: '))
+            chosen_number = int(input('Give number: '))
+            print(operation(chosen_operation,chosen_number,result))
+            result+=chosen_number
+        else:
+            chosen_number = int(input('Give number: '))
+            print(operation(chosen_operation,chosen_number,result))
+            if chosen_operation == 'a':
+                result+=chosen_number 
+            elif chosen_operation == 's':
+                result-=chosen_number 
+            elif chosen_operation == 'm':
+                result = result*chosen_number 
+
+
