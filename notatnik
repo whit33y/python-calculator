@@ -1,7 +1,0 @@
-def check_operation(chosen_operation):
-    if chosen_operation == 'a':
-        results = results + chosen_number 
-    elif chosen_operation == 's':
-        results = results - chosen_number
-    elif chosen_operation == 'm':
-        results = results*chosen_number 
